@@ -10,6 +10,13 @@
           1,
           1,
           null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
           1,
           1,
           1,
@@ -21,11 +28,18 @@
       "/Users/patrickoliver/Projects/Makers_Course/Bookmark Manager/Bookmark_day1/spec/features/viewing_bookmark_spec.rb": {
         "lines": [
           1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
           1,
           1,
           1,
           null,
           1,
+          null,
           1,
           1,
           1,
@@ -34,6 +48,6 @@
         ]
       }
     },
-    "timestamp": 1583764892
+    "timestamp": 1583769336
   }
 }
