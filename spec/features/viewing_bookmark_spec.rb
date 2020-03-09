@@ -5,7 +5,7 @@ feature 'Viewing bookmarks' do
   end
   scenario 'I want to view all of my bookmarks' do
     visit('/bookmarks')
-    expect(page).to have_content "www.google.com"
-    expect(page).to have_content "www.makersacademy.com"
+    expect(page).to have_content "http://www.google.com"
+    expect(page).to have_content "http://www.makersacademy.com"
   end
 end
