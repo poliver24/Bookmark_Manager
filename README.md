@@ -13,11 +13,20 @@ Tag bookmarks into categories
 Filter bookmarks by tag
 Users are restricted to manage only their own bookmarks
 
+## User Stories
+
 1. Show a list of Bookmarks
 
     As a User
     So that I may view my saved websites
     I would like to see a list of my bookmarks
+
+2. Add new Bookmarks
+
+    As a User
+    So that I may save a new website
+    I would like to be able a new bookmark
+
 
 ## Domain Model
 
