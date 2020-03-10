@@ -27,6 +27,12 @@ Users are restricted to manage only their own bookmarks
     So that I may save a new website
     I would like to be able a new bookmark
 
+3. Delete Bookmarks
+
+    As a User
+    So that I can remove my bookmark
+    I want to delete a bookmark
+
 
 ## Domain Model
 
