@@ -1,10 +1,11 @@
 # frozen_string_literal: true
+
 require_relative 'database_connection'
 
 class Bookmark
   def self.all
-    result = DatabaseConnection.query("SELECT * FROM bookmarks")
-    connection = PG.connect(dbname: 'bookmark_manager_test')	    
+    result = DatabaseConnection.query('SELECT * FROM bookmarks')
+    connection = PG.connect(dbname: 'bookmark_manager_test')
     result.map do |bookmark|
       Bookmark.new(
         url: bookmark['url'],

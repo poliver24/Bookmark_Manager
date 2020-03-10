@@ -14,7 +14,7 @@
       <img src="./assets/0.12.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-03-10T11:44:17+00:00">2020-03-10T11:44:17+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-03-10T14:02:46+00:00">2020-03-10T14:02:46+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -84,7 +84,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#4f1c82baa4698878ef67fc699f42531d928b5217" class="src_link" title="spec/database_connection_spec.rb">spec/database_connection_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">28</td>
+            <td class="cell--number">30</td>
             <td class="cell--number">14</td>
             <td class="cell--number">14</td>
             <td class="cell--number">0</td>
@@ -860,13 +860,13 @@
     <ol>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="1">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="1">
+            
             
 
             
 
-            <code class="ruby">require &#39;database_connection&#39;</code>
+            <code class="ruby"># frozen_string_literal: true</code>
           </li>
         </div>
       
@@ -888,18 +888,18 @@
 
             
 
-            <code class="ruby">describe DatabaseConnection do</code>
+            <code class="ruby">require &#39;database_connection&#39;</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="4">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="4">
+            
             
 
             
 
-            <code class="ruby">  describe &#39;.setup&#39; do</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -910,7 +910,7 @@
 
             
 
-            <code class="ruby">    it &#39;sets up a connection to a database through PG&#39; do</code>
+            <code class="ruby">describe DatabaseConnection do</code>
           </li>
         </div>
       
@@ -921,18 +921,18 @@
 
             
 
-            <code class="ruby">      expect(PG).to receive(:connect).with(dbname: &#39;bookmark_manager_test&#39;)</code>
+            <code class="ruby">  describe &#39;.setup&#39; do</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="7">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="7">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">    it &#39;sets up a connection to a database through PG&#39; do</code>
           </li>
         </div>
       
@@ -943,7 +943,7 @@
 
             
 
-            <code class="ruby">      DatabaseConnection.setup(&#39;bookmark_manager_test&#39;)</code>
+            <code class="ruby">      expect(PG).to receive(:connect).with(dbname: &#39;bookmark_manager_test&#39;)</code>
           </li>
         </div>
       
@@ -954,29 +954,29 @@
 
             
 
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="10">
-            
-            
-
-            
-
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="11">
+          <li class="covered" data-hits="1" data-linenumber="10">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    it &#39;this connection is persistent&#39; do</code>
+            <code class="ruby">      DatabaseConnection.setup(&#39;bookmark_manager_test&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="11">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -987,7 +987,7 @@
 
             
 
-            <code class="ruby">      # Grab the connection as a return value from the .setup method</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -998,7 +998,7 @@
 
             
 
-            <code class="ruby">      connection = DatabaseConnection.setup(&#39;bookmark_manager_test&#39;)</code>
+            <code class="ruby">    it &#39;this connection is persistent&#39; do</code>
           </li>
         </div>
       
@@ -1009,7 +1009,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      # Grab the connection as a return value from the .setup method</code>
           </li>
         </div>
       
@@ -1020,7 +1020,7 @@
 
             
 
-            <code class="ruby">      expect(DatabaseConnection.connection).to eq connection</code>
+            <code class="ruby">      connection = DatabaseConnection.setup(&#39;bookmark_manager_test&#39;)</code>
           </li>
         </div>
       
@@ -1031,18 +1031,18 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="17">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="17">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  end</code>
+            
+
+            <code class="ruby">      expect(DatabaseConnection.connection).to eq connection</code>
           </li>
         </div>
       
@@ -1053,29 +1053,29 @@
 
             
 
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="19">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="20">
+            
+            
+
+            
+
             <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="19">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  describe &#39;.query&#39; do</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="20">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    it &#39;executes a query via PG&#39; do</code>
           </li>
         </div>
       
@@ -1086,18 +1086,18 @@
 
             
 
-            <code class="ruby">      connection = DatabaseConnection.setup(&#39;bookmark_manager_test&#39;)</code>
+            <code class="ruby">  describe &#39;.query&#39; do</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="22">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="22">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">    it &#39;executes a query via PG&#39; do</code>
           </li>
         </div>
       
@@ -1108,7 +1108,7 @@
 
             
 
-            <code class="ruby">      expect(connection).to receive(:exec).with(&quot;SELECT * FROM bookmarks;&quot;)</code>
+            <code class="ruby">      connection = DatabaseConnection.setup(&#39;bookmark_manager_test&#39;)</code>
           </li>
         </div>
       
@@ -1130,7 +1130,7 @@
 
             
 
-            <code class="ruby">      DatabaseConnection.query(&quot;SELECT * FROM bookmarks;&quot;)</code>
+            <code class="ruby">      expect(connection).to receive(:exec).with(&#39;SELECT * FROM bookmarks;&#39;)</code>
           </li>
         </div>
       
@@ -1141,12 +1141,34 @@
 
             
 
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="27">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      DatabaseConnection.query(&#39;SELECT * FROM bookmarks;&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="28">
+            
+            
+
+            
+
             <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="27">
+          <li class="never" data-hits="" data-linenumber="29">
             
             
 
@@ -1157,7 +1179,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="28">
+          <li class="never" data-hits="" data-linenumber="30">
             
             
 
