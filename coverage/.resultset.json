@@ -64,12 +64,34 @@
           1,
           null,
           null,
+          1,
+          null,
+          null,
           null
         ]
       },
       "/Users/patrickoliver/Projects/Makers_Course/Bookmark Manager/Bookmark_day1/spec/database_helpers.rb": {
         "lines": [
           null,
+          1,
+          null,
+          1,
+          2,
+          2,
+          null
+        ]
+      },
+      "/Users/patrickoliver/Projects/Makers_Course/Bookmark Manager/Bookmark_day1/spec/comment_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           1,
           null,
@@ -77,6 +99,8 @@
           1,
           1,
           1,
+          null,
+          null,
           null
         ]
       },
@@ -108,6 +132,30 @@
           null,
           1,
           null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/patrickoliver/Projects/Makers_Course/Bookmark Manager/Bookmark_day1/spec/features/adding_and_viewing_comments_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
           1,
           null,
           null,
@@ -205,6 +253,6 @@
         ]
       }
     },
-    "timestamp": 1583928443
+    "timestamp": 1584013450
   }
 }

@@ -2,6 +2,7 @@
 
 require 'sinatra/base'
 require './lib/bookmark'
+require './lib/comment'
 require_relative './database_connection_setup.rb'
 require 'uri'
 require 'sinatra/flash'
@@ -29,7 +30,9 @@ class BookmarkManager < Sinatra::Base
   end
 
   post '/bookmarks' do
-    flash[:notice] = "What is this @$%! ? You must submit a valid URL." unless Bookmark.create(url: params['url'], title: params[:title])
+    unless Bookmark.create(url: params[:url], title: params[:title])
+      flash[:notice] = 'What is this @$%! ? You must submit a valid URL.'
+    end
     redirect('/bookmarks')
   end
 
@@ -40,6 +43,16 @@ class BookmarkManager < Sinatra::Base
 
   patch '/bookmarks/:id' do
     Bookmark.edit(id: params[:id], url: params[:url], title: params[:title])
+    redirect '/bookmarks'
+  end
+
+  get '/bookmarks/:id/comments/new' do
+    @bookmark_id = params[:id]
+    erb :'comments/new'
+  end
+
+  post '/bookmarks/:id/comments' do
+    Comment.create(text: params[:comment], bookmark_id: params[:id])
     redirect '/bookmarks'
   end
 
