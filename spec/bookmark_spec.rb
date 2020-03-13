@@ -1,10 +1,14 @@
 # frozen_string_literal: true
 
 require 'bookmark'
-
 require 'database_helpers'
+require 'tag'
+require 'bookmark_tag'
 
 describe Bookmark do
+  let(:comment_class) { double(:comment_class) }
+  let(:tag_class) { double(:tag_class) }
+
   describe '.all' do
     it 'returns a list of bookmarks' do
       connection = PG.connect(dbname: 'bookmark_manager_test')
@@ -23,6 +27,7 @@ describe Bookmark do
       expect(bookmarks.first.url).to eq 'http://www.makersacademy.com'
     end
   end
+
   describe '.create' do
     it 'creates a new bookmark' do
       bookmark = Bookmark.create(url: 'http://www.testbookmark.com', title: 'Test Bookmark')
@@ -33,11 +38,13 @@ describe Bookmark do
       expect(bookmark.title).to eq 'Test Bookmark'
       expect(bookmark.url).to eq 'http://www.testbookmark.com'
     end
+
     it 'does not create a new bookmark if the URL is not valid' do
       Bookmark.create(url: 'not a real bookmark', title: 'not a real bookmark')
       expect(Bookmark.all).to be_empty
     end
   end
+
   describe '.delete' do
     it 'deletes the given bookmark' do
       bookmark = Bookmark.create(title: 'Makers Academy', url: 'http://www.makersacademy.com')
@@ -47,6 +54,7 @@ describe Bookmark do
       expect(Bookmark.all.length).to eq 0
     end
   end
+
   describe '.find' do
     it 'returns the requested bookmark object' do
       bookmark = Bookmark.create(title: 'Makers Academy', url: 'http://www.makersacademy.com')
@@ -59,6 +67,15 @@ describe Bookmark do
       expect(result.url).to eq 'http://www.makersacademy.com'
     end
   end
+
   describe '#comments' do
+  end
+
+describe '#tags' do
+    it 'calls .where on the Tag class' do
+      bookmark = Bookmark.create(title: 'Makers Academy', url: 'http://www.makersacademy.com')
+      expect(tag_class).to receive(:where).with(bookmark_id: bookmark.id)
+      bookmark.tags(tag_class)
+    end
   end
 end

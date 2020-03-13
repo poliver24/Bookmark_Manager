@@ -3,6 +3,7 @@
 require_relative 'database_connection'
 require 'uri'
 require_relative './comment'
+require_relative './tag'
 
 class Bookmark
   def self.all
@@ -24,10 +25,11 @@ end
   end
 
   def self.delete(id:)
-    DatabaseConnection.query("DELETE FROM comments WHERE bookmark_id = #{id}; DELETE FROM bookmarks WHERE id = #{id}")
+    DatabaseConnection.query("DELETE FROM bookmark_tags WHERE bookmark_id = #{id}; DELETE FROM comments WHERE bookmark_id = #{id}; DELETE FROM bookmarks WHERE id = #{id}")
   end
 
   def self.edit(id:, url:, title:)
+    return false unless is_url?(url)
     result = DatabaseConnection.query("UPDATE bookmarks SET url = '#{url}', title = '#{title}' WHERE id = #{id} RETURNING id, url, title;")
     Bookmark.new(id: result[0]['id'], title: result[0]['title'], url: result[0]['url'])
   end
@@ -47,6 +49,10 @@ end
 
   def comments(comment_class = Comment)
     comment_class.where(bookmark_id: id)
+  end
+
+  def tags(tag_class = Tag)
+    tag_class.where(bookmark_id: id)
   end
 
   private
